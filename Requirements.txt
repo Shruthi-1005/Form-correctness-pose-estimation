@@ -1,0 +1,3 @@
+-openCV2
+-MediaPipe
+-Numpy
