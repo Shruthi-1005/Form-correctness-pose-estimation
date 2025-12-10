@@ -30,31 +30,22 @@ A moving window removes jitter:
 AngleSmoother → returns an averaged angle for better stability.
 
 ### 3. Posture Rules  
-The script implements Smartan's required rules:
 
 - If elbow angle < 40° → "Elbow and Curl flexed too tight"
 - If elbow angle > 170° → "Over-flexion elbow"
 - If back angle < 160° → "Keep hip stable"
 - If no rule is violated → "Good form"
 
+### 4. Wrist angle
+- the wrist should stay neutral and aligned with the elbow
+- Any upward or downward bend indicates poor form.
+-  I detect this by measuring wrist–elbow alignment and warn the user if the wrist 
+deviates beyond a safe threshold.
+
 ### 4. Rep Counting  
 A rep is counted when:
 - Arm moves from extended ( >150° ) → downward  
 - Then curls up (<80°)
-
----
-
-## 📁 Project Structure
-
-src/
-  calculate_angle.py  
-  angle_smoother.py  
-  analyse_bicep_curl.py  
-videos/
-  Bicep_curl.mp4  
-  Analysed_Bicep_Curl.mp4  
-Smartan_Task_Report.pdf  
-requirements.txt  
 
 ---
 
@@ -66,20 +57,18 @@ requirements.txt
 3. Add your input video into import files.
 
 4. Run:
-   python src/analyse_bicep_curl.py
+   analyse_bicep_curl.py
 
 5. Output video will appear in:
    Analysed_Bicep_Curl.mp4
 
 ---
 
-## ✔ Matches Smartan Task Requirements
+## Structure
 
 - Pose detection using MediaPipe  
 - Angle extraction and smoothing  
 - Rule-based evaluation  
 - Repetition counting  
-- Video overlay output  
-- Proper script structure  
-- PDF explanation included  
+- Video overlay output   
 
